@@ -1,4 +1,4 @@
-from peft import LoraConfig, get_peft_model, prepare_model_for_int8_training, LoraConfig, get_peft_model
+from peft import LoraConfig, get_peft_model, LoraConfig, get_peft_model
 from instruct_pipeline import InstructionTextGenerationPipeline
 
 import torch
