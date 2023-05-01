@@ -5,12 +5,12 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 MODEL_NAME = "databricks/dolly-v2-3b"
-SAVED_STATE_DICT = 
+SAVED_STATE_DICT = "alpaca-lora-dolly-2.0.pth"
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, padding_side="left")
 model = AutoModelForCausalLM.from_pretrained(MODEL_NAME, device_map="auto", torch_dtype=torch.bfloat16)
 
-state_dict = torch.load("alpaca-lora-dolly-2.0.pth")
+state_dict = torch.load(SAVED_STATE_DICT)
 LORA_R = 4
 LORA_ALPHA = 16
 LORA_DROPOUT = 0.05
